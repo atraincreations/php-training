@@ -1,49 +1,41 @@
 <?php
-    //$myVar1 = 'Hello World!';
-    //echo $myVar1;
+    //OOP
+    class User{
+        //Properties and Methods
+        //Properties
+        public $id;
+        public $username;
+        public $email;
+        public $passwords;
 
-    //$numbers = array(12, 4, 5, 17, 8);
-    //print_r($numbers);
-    //echo $numbers[1];
-    /*
-    $ages = array(
-        "John" => 35,
-        "Mary" => 27,
-        "Bob" => 55
-    );
-    */
-    //echo $ages['Mary'];
-    //echo count($ages);
-    /*
-    for($i = 0; $i <= 5; $i++){
-        echo $i;
-    }
-    */
-    /*
-    $i = 0;
-    while($i <= 10){
-        echo 'Number ' .$i. '<br />';
-        $i++;
-    }
+        //Methods are funstion in a class
+        public function __construct(){
+            //echo 'Constructor Called';
+        }
 
-    $numbers = array(12, 4, 5, 17, 8);
-    foreach($numbers as $number){
-        echo 'This is number ' .$number. '<br />';
-    }
-    */
+        public function register(){
+            echo 'User Registered';
+        }
 
-    //Functions
-    /*
-    function greet($name){
-        echo 'Hello '. $name;
+        public function login($username, $password){
+            $this->username = $username;
+            $this->password = $password;
+            $this->auth_user();
+        }
+
+        public function auth_user(){
+            echo $this->username. ' is authenticated';
+        }
+
+        public function __destruct(){
+            //echo 'Destructor Called';
+        }
     }
 
-    greet('Alex'); */
-    // Operators
-    $num = 10;
+    $User = new User;
 
-    if($num == 10){
-        echo 'Correct!';
-    }
+
+    $User->login('alex', '1234');
+    //$User->register();
 
 ?>
